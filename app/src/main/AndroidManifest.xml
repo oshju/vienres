@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Proyectoapp"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Ventana6"
+            android:exported="true" />
+        <activity
             android:name=".Pruebaapikey"
             android:exported="true" />
         <activity android:name=".Ventana5" />
