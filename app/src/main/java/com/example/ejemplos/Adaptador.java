@@ -43,11 +43,13 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, int position) {
         String nombre = listaClientes.get(position).getNombre();
         holder.txtnombre.setText(nombre);
+        holder.txtnombre.setText(nombre);
         loadPokemon();
     }
 
     @Override
-    public int getItemCount() {
+    public int getItemCount()
+    {
         return listaClientes.size();
     }
 
@@ -73,8 +75,8 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
                                 JSONObject result = results.getJSONObject(i);
                                 pokemon.add(new Cliente(
                                         result.getString("nombre"),
-                                        result.getString("habilidad"),
-                                        result.getString("tipo")));
+                                        result.getString("habilidad")));
+
                             }
 
                             notifyDataSetChanged();
@@ -89,6 +91,7 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
             }
         });
         requestQueue.add(request);
+       
         loadPokemon();
     }
 

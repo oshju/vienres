@@ -17,9 +17,4 @@
         android:layout_height="wrap_content"
         android:text="habilidad" />
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="tipo" />
 </LinearLayout>
