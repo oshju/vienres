@@ -25,6 +25,7 @@ import java.util.List;
 public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
 
     private List<Cliente> listaClientes;
+    private TextView txthabilidad;
 
     public Adaptador(List<Cliente> ListaCliente) {
         this.listaClientes = ListaCliente;
@@ -39,13 +40,7 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
 
 
 
-    @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        String nombre = listaClientes.get(position).getNombre();
-        holder.txtnombre.setText(nombre);
-        holder.txtnombre.setText(nombre);
-        loadPokemon();
-    }
+
 
     @Override
     public int getItemCount()
@@ -57,8 +52,15 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
         private TextView txtnombre;
         public ViewHolder(View v) {
             super(v);
-            txtnombre = (TextView) v.findViewById(R.id.txtnombre);
+            txtnombre = (TextView) v.findViewById(R.id.txtnombre1);
         }
+    }
+
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        String nombre = listaClientes.get(position).getNombre();
+        holder.txtnombre.setText(nombre);
+        loadPokemon();
     }
     private List<Cliente> pokemon = new ArrayList<>();
     private RequestQueue requestQueue;
@@ -74,8 +76,8 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> {
                             for (int i = 0; i < results.length(); i++) {
                                 JSONObject result = results.getJSONObject(i);
                                 pokemon.add(new Cliente(
-                                        result.getString("nombre"),
-                                        result.getString("habilidad")));
+                                        result.getString("nombre")));
+
 
                             }
 

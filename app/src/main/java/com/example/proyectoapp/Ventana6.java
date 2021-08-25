@@ -45,15 +45,15 @@ public class Ventana6 extends AppCompatActivity {
 
         miRecicler.setLayoutManager(new LinearLayoutManager(this));
         //Especificamos el adaptador con la lista a visualizar
-        miAdapter = new Adaptador(pokemon);
+        miAdapter = new Adaptador(DatosClientes());
         miRecicler.setAdapter(miAdapter);
 
     }
         public List<Cliente> DatosClientes() {
 
             List<Cliente> Lista = new ArrayList<>();
-            Lista.add(new Cliente("pikachu","electrico"));
-            Lista.add(new Cliente("charmander","fuego"));
+            Lista.add(new Cliente("pikachu"));
+            Lista.add(new Cliente("charmander"));
 
 
             return Lista;
@@ -73,8 +73,8 @@ public class Ventana6 extends AppCompatActivity {
                             for (int i = 0; i < results.length(); i++) {
                                 JSONObject result = results.getJSONObject(i);
                                 pokemon.add(new Cliente(
-                                        result.getString("nombre"),
-                                        result.getString("habilidad")));
+                                        result.getString("nombre")));
+
 
                             }
 
